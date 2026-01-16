@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind | Oplossingen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #info-modal {
+            display: none;
+        }
+
+        #info-modal.active {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 antialiased font-sans text-left">
+
+    <header class="bg-white shadow-sm sticky top-0 z-50 border-b border-slate-200">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center text-left">
+            <a href="index.html" class="text-2xl font-black text-blue-600 tracking-tighter uppercase">Tailwind.</a>
+            <div class="hidden md:flex items-center space-x-8 font-semibold text-sm uppercase tracking-wide">
+                <a href="over-ons.html" class="hover:text-blue-600">Missie</a>
+                <a href="aanbod.html" class="text-blue-600 font-bold border-b-2 border-blue-600">Oplossingen</a>
+                <a href="forum.html" class="hover:text-blue-600">Forum</a>
+                <a href="contact.html" class="hover:text-blue-600">Contact &amp; Jobs</a>
+            </div>
+            <a href="winkelmand.html"
+                class="bg-slate-900 text-white px-5 py-2 rounded-full flex items-center gap-2 hover:bg-blue-600 transition">
+                <span>Mand</span>
+                <span id="cart-count" class="bg-blue-500 text-[10px] px-1.5 py-0.5 rounded-full font-bold">0</span>
+            </a>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-20 page-anim">
+        <h2 class="text-4xl font-black mb-12 uppercase tracking-tighter text-left italic">Oplossingen op maat</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div
+                class="bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm transition hover:shadow-2xl hover:-translate-y-2">
+                <button type="button" onclick="openInfo('audit')" class="w-full text-left focus:outline-none group">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400&auto=format&fit=crop"
+                        alt="Audit" class="w-full h-48 object-cover">
+                    <span
+                        class="block p-8 pb-0 text-xl font-bold italic underline decoration-blue-400 group-hover:text-blue-600 transition">AI
+                        Business Audit</span>
+                </button>
+                <div class="p-8 pt-4">
+                    <p class="text-3xl font-black text-blue-600 mb-6 italic">€ 499,00</p>
+                    <button type="button" onclick="addToCart('AI Business Audit', 499)"
+                        class="w-full bg-slate-900 text-white py-4 rounded-xl font-bold uppercase hover:bg-blue-600 transition shadow-md">Voeg
+                        toe</button>
+                </div>
+            </div>
+
+            <div
+                class="bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm transition hover:shadow-2xl hover:-translate-y-2">
+                <button type="button" onclick="openInfo('workshop')" class="w-full text-left focus:outline-none group">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=400&auto=format&fit=crop"
+                        alt="Workshop" class="w-full h-48 object-cover">
+                    <span
+                        class="block p-8 pb-0 text-xl font-bold italic underline decoration-blue-400 group-hover:text-blue-600 transition">Workshop
+                        Efficiëntie</span>
+                </button>
+                <div class="p-8 pt-4">
+                    <p class="text-3xl font-black text-blue-600 mb-6 italic">€ 150,00</p>
+                    <button type="button" onclick="addToCart('Workshop Efficiëntie', 150)"
+                        class="w-full bg-slate-900 text-white py-4 rounded-xl font-bold uppercase hover:bg-blue-600 transition shadow-md">Voeg
+                        toe</button>
+                </div>
+            </div>
+
+            <div
+                class="bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm transition hover:shadow-2xl hover:-translate-y-2">
+                <button type="button" onclick="openInfo('cloud')" class="w-full text-left focus:outline-none group">
+                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=400&auto=format&fit=crop"
+                        alt="Cloud" class="w-full h-48 object-cover">
+                    <span
+                        class="block p-8 pb-0 text-xl font-bold italic underline decoration-blue-400 group-hover:text-blue-600 transition">Cloud
+                        Integratie</span>
+                </button>
+                <div class="p-8 pt-4">
+                    <p class="text-3xl font-black text-blue-600 mb-6 italic">€ 899,00</p>
+                    <button type="button" onclick="addToCart('Cloud Integratie', 899)"
+                        class="w-full bg-slate-900 text-white py-4 rounded-xl font-bold uppercase hover:bg-blue-600 transition shadow-md">Voeg
+                        toe</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="info-modal" class="fixed inset-0 z-[100] bg-slate-900/80 backdrop-blur-sm p-4 items-center justify-center">
+        <div class="bg-white max-w-2xl w-full rounded-[2.5rem] p-10 relative shadow-2xl border-4 border-white">
+            <button type="button" onclick="closeInfo()"
+                class="absolute top-6 right-6 text-2xl font-black text-slate-400 hover:text-slate-900 transition">✕</button>
+            <div id="modal-content" class="space-y-6 text-left"></div>
+        </div>
+    </div>
+
+    <script>
+        // 1. WINKELMAND LOGICA
+        // Haal mand op of maak een nieuwe lege lijst
+        let cart = JSON.parse(localStorage.getItem("tailwind_cart")) || [];
+
+        // Update de teller
+        function updateCartCount() {
+            const countLabel = document.getElementById("cart-count");
+            if (countLabel) countLabel.innerText = cart.length;
+        }
+
+        // Voeg item toe
+        function addToCart(name, price) {
+            cart.push({ id: Date.now(), name: name, price: price });
+            localStorage.setItem("tailwind_cart", JSON.stringify(cart));
+            updateCartCount();
+            alert(name + " is toegevoegd!");
+        }
+
+        // Voer teller update uit bij laden
+        updateCartCount();
+
+        // 2. POP-UP LOGICA
+        const details = {
+            audit: { title: "AI Business Audit", desc: "Analyse van uw bedrijfsprocessen om efficiëntie te verhogen." },
+            workshop: { title: "Workshop Efficiëntie", desc: "Leer uw team werken met de nieuwste digitale tools." },
+            cloud: { title: "Cloud Integratie", desc: "Veilige migratie van data naar de cloud." }
+        };
+
+        function openInfo(key) {
+            const item = details[key];
+            document.getElementById('modal-content').innerHTML = `
+                <h3 class="text-3xl font-black uppercase text-blue-600 italic tracking-tighter">${item.title}</h3>
+                <p class="text-slate-600 italic text-lg leading-relaxed">${item.desc}</p>
+                <button type="button" onclick="closeInfo()" class="bg-slate-100 text-slate-900 px-6 py-3 rounded-xl font-bold uppercase text-sm hover:bg-slate-200 transition">Sluiten</button>
+            `;
+            document.getElementById('info-modal').classList.add('active');
+        }
+
+        function closeInfo() {
+            document.getElementById('info-modal').classList.remove('active');
+        }
+    </script>
+</body>
+
+</html>

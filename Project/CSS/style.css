@@ -1,0 +1,10 @@
+/* style.css */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.page-anim { animation: fadeIn 0.6s ease-out; }
+
+.office-building {
+    background: linear-gradient(to bottom, #1e293b, #0f172a);
+    position: relative;
+    overflow: hidden;
+}
+.window { background: rgba(59, 130, 246, 0.3); border-radius: 2px; }

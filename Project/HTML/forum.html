@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="nl" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Tailwind | Forum  &amp;Nieuws</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .news-card {
+            transition: all 0.3s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            border-color: #3b82f6;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 antialiased font-sans">
+
+    <header class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-slate-200">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-black text-blue-600 tracking-tighter uppercase">Tailwind.</a>
+            <div class="hidden md:flex items-center space-x-8 font-semibold text-sm uppercase tracking-wide">
+                <a href="dashboard.html" class="hover:text-blue-600 transition">Dashboard</a>
+                <a href="forum.html" class="text-blue-600 font-bold border-b-2 border-blue-600">Forum</a>
+                <a href="aanbod.html" class="hover:text-blue-600 transition">Oplossingen</a>
+                <a href="contact.html" class="hover:text-blue-600 transition">Contact &amp; Jobs</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <div class="text-left mb-16">
+            <h1 class="text-5xl font-black uppercase tracking-tighter mb-4">Bedrijfsforum</h1>
+            <p class="text-xl text-slate-500 italic underline decoration-blue-200">Blijf op de hoogte van onze laatste
+                projecten en kansen.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-12">
+            <div class="lg:col-span-2 space-y-12">
+                <h2 class="text-3xl font-bold italic border-l-8 border-blue-600 pl-4 uppercase tracking-tight">Laatste
+                    Nieuws</h2>
+
+                <article class="news-card bg-white p-8 rounded-[2rem] border border-slate-200 shadow-sm space-y-4">
+                    <span
+                        class="bg-blue-100 text-blue-600 text-xs font-bold px-3 py-1 rounded-full uppercase">Hiring</span>
+                    <h3
+                        class="text-2xl font-black italic underline decoration-slate-200 uppercase tracking-tighter text-left">
+                        Wij breiden ons team uit!</h3>
+                    <p class="text-slate-600 leading-relaxed text-left italic">
+                        Vanwege onze snelle groei op de lokale markt zijn wij op zoek naar diverse profielen. Of je nu
+                        een creatieve designer bent, een technisch onderlegde engineer, of een administratieve
+                        duizendpoot: wij willen je ontmoeten.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-left">
+                        <span
+                            class="text-xs bg-slate-100 px-3 py-1 rounded-md font-bold text-slate-500 italic uppercase">#FullStack</span>
+                        <span
+                            class="text-xs bg-slate-100 px-3 py-1 rounded-md font-bold text-slate-500 italic uppercase">#UXDesigner</span>
+                        <span
+                            class="text-xs bg-slate-100 px-3 py-1 rounded-md font-bold text-slate-500 italic uppercase">#OfficeManager</span>
+                    </div>
+                    <a href="contact.html"
+                        class="inline-block text-blue-600 font-black uppercase text-sm tracking-widest pt-4 hover:translate-x-2 transition-transform underline decoration-blue-200 italic">Bekijk
+                        de sollicitatiepagina &rarr;</a>
+                </article>
+
+                <article class="news-card bg-white p-8 rounded-[2rem] border border-slate-200 shadow-sm space-y-4">
+                    <span
+                        class="bg-green-100 text-green-600 text-xs font-bold px-3 py-1 rounded-full uppercase">Community</span>
+                    <h3
+                        class="text-2xl font-black italic underline decoration-slate-200 uppercase tracking-tighter text-left">
+                        Tailwind Meetup 2026</h3>
+                    <p class="text-slate-600 leading-relaxed text-left italic">
+                        Vorige maand organiseerden we onze eerste lokale Tech-Meetup in ons kantoor. Het was een groot
+                        succes met meer dan 50 lokale ondernemers.
+                    </p>
+                </article>
+            </div>
+
+            <div class="space-y-12 text-left">
+                <h2 class="text-3xl font-bold italic border-l-8 border-slate-900 pl-4 uppercase tracking-tight">Onze
+                    Impact</h2>
+
+                <div class="bg-slate-900 text-white p-8 rounded-[2rem] shadow-xl space-y-4 text-left">
+                    <h4 class="text-xl font-bold italic text-blue-400 uppercase tracking-tighter">Project: Stadshub
+                        Antwerpen</h4>
+                    <p class="text-sm text-slate-400 italic leading-relaxed text-left">
+                        Voor de lokale overheid implementeerden wij een Cloud-dashboard dat real-time energieverbruik
+                        visualiseert voor openbare gebouwen.
+                    </p>
+                    <p
+                        class="text-xs font-bold uppercase tracking-widest text-slate-500 italic underline decoration-slate-700">
+                        Resultaat: 15% energiebesparing</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-[2rem] border border-slate-200 shadow-sm space-y-4 text-left">
+                    <h4 class="text-xl font-bold italic text-blue-600 uppercase tracking-tighter">Project: Lokaal Retail
+                        Netwerk</h4>
+                    <p class="text-sm text-slate-500 italic leading-relaxed text-left">
+                        Een AI-gestuurde voorraadbeheer tool voor een collectief van 12 lokale winkels.
+                    </p>
+                    <p
+                        class="text-xs font-bold uppercase tracking-widest text-slate-400 italic underline decoration-slate-200">
+                        Status: Voltooid</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer
+        class="bg-white border-t border-slate-100 py-16 text-center text-[10px] font-black uppercase tracking-[0.5em] text-slate-400 italic">
+        &copy; 2026 Project Tailwind. Community Driven.
+    </footer>
+
+</body>
+
+</html>

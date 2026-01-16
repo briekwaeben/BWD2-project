@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind HQ | Start</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-slate-50 antialiased font-sans text-left">
+
+    <header class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-slate-200">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center text-left">
+            <a href="index.html" class="text-2xl font-black text-blue-600 tracking-tighter uppercase">Tailwind.</a>
+            <div class="hidden md:flex items-center space-x-8 font-semibold text-sm uppercase tracking-wide">
+                <a href="over-ons.html" class="hover:text-blue-600 transition">Missie</a>
+                <a href="aanbod.html" class="hover:text-blue-600 transition">Oplossingen</a>
+                <a href="forum.html" class="hover:text-blue-600 transition">Forum</a>
+                <a href="contact.html" class="hover:text-blue-600 transition">Contact &amp; Jobs</a>
+            </div>
+            <a href="winkelmand.html"
+                class="bg-slate-900 text-white px-5 py-2 rounded-full flex items-center gap-2 hover:bg-blue-600 transition">
+                <span>Mand</span>
+                <span id="cart-count" class="bg-blue-500 text-[10px] px-1.5 py-0.5 rounded-full font-bold">0</span>
+            </a>
+        </nav>
+    </header>
+
+    <main
+        class="relative bg-slate-900 bg-gradient-to-b from-slate-800 to-slate-950 min-h-[90vh] flex items-center justify-center text-center text-white px-6 overflow-hidden">
+
+        <div class="absolute inset-0 grid grid-cols-6 md:grid-cols-12 gap-4 opacity-20 p-4 md:p-10 pointer-events-none">
+            <div class="h-16 md:h-20 bg-blue-500/20 rounded"></div>
+            <div class="h-16 md:h-20 bg-blue-500/20 rounded"></div>
+            <div class="h-16 md:h-20 bg-blue-500/20 rounded"></div>
+            <div class="h-16 md:h-20 bg-blue-500/20 rounded"></div>
+            <div class="h-16 md:h-20 bg-blue-500/20 rounded"></div>
+            <div class="h-16 md:h-20 bg-blue-500/20 rounded"></div>
+            <div class="h-16 md:h-20 bg-blue-500/20 rounded hidden md:block"></div>
+            <div class="h-16 md:h-20 bg-blue-500/20 rounded hidden md:block"></div>
+            <div class="h-16 md:h-20 bg-blue-500/20 rounded hidden md:block"></div>
+            <div class="h-16 md:h-20 bg-blue-500/20 rounded hidden md:block"></div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl space-y-8">
+            <h1 class="text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none">
+                Welkom bij <br><span class="text-blue-400 italic">Tailwind HQ.</span>
+            </h1>
+            <div class="bg-white/10 backdrop-blur-md p-6 md:p-8 rounded-3xl border border-white/10">
+                <p class="text-lg md:text-2xl leading-relaxed text-slate-100 italic">
+                    Innovatieve digitale architectuur voor de ondernemer van morgen.
+                </p>
+            </div>
+            <a href="aanbod.html"
+                class="inline-block bg-blue-600 text-white px-10 py-5 rounded-full font-black uppercase tracking-widest transition shadow-2xl hover:bg-white hover:text-blue-600 transform hover:scale-105">
+                Bekijk Oplossingen
+            </a>
+        </div>
+    </main>
+
+    <script src="cart.js"></script>
+</body>
+
+</html>

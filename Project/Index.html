@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Tailwind | Innovatie  Strategie</title>
+    <title>Project Tailwind | HQ Final</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .page-section {
@@ -13,7 +13,7 @@
 
         .page-section.active {
             display: block;
-            animation: fadeIn 0.5s ease-out;
+            animation: fadeIn 0.6s ease-out;
         }
 
         @keyframes fadeIn {
@@ -27,263 +27,223 @@
                 transform: translateY(0);
             }
         }
+
+        .hero-overlay {
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+                url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
     </style>
 </head>
 
 <body class="bg-slate-50 text-slate-900 antialiased font-sans">
 
     <header class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-slate-200">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <button type="button" onclick="showPage('home')"
-                class="text-2xl font-black text-blue-600 tracking-tighter uppercase focus:outline-none">Tailwind.</button>
-
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center text-left">
+            <button type="button" onclick="showPage('start')"
+                class="text-2xl font-black text-blue-600 tracking-tighter uppercase transition hover:scale-105">Tailwind.</button>
             <div class="hidden md:flex items-center space-x-8 font-semibold text-sm uppercase tracking-wide">
-                <button type="button" onclick="showPage('over-ons')"
-                    class="hover:text-blue-600 transition focus:outline-none">Missie</button>
+                <button type="button" onclick="showPage('home')"
+                    class="hover:text-blue-600 transition">Dashboard</button>
                 <button type="button" onclick="showPage('aanbod')"
-                    class="hover:text-blue-600 transition focus:outline-none">Oplossingen</button>
-                <button type="button" onclick="showPage('vacatures')"
-                    class="hover:text-blue-600 transition focus:outline-none">Jobs</button>
-                <button type="button" onclick="showPage('contact')"
-                    class="hover:text-blue-600 transition focus:outline-none">Contact</button>
-                <button type="button" onclick="showPage('winkelmand')"
-                    class="bg-slate-900 text-white px-5 py-2 rounded-full hover:bg-blue-600 transition flex items-center gap-2 focus:outline-none shadow-md">
+                    class="hover:text-blue-600 transition">Oplossingen</button>
+                <button type="button" onclick="showPage('contact-hub')" class="hover:text-blue-600 transition">Contact &amp;
+                    Jobs</button>
+                <button type="button" aria-label="Winkelmand openen" onclick="showPage('winkelmand')"
+                    class="bg-slate-900 text-white px-5 py-2 rounded-full hover:bg-blue-600 transition flex items-center gap-2 shadow-md">
                     <span>Mand</span>
-                    <span id="cart-count" class="bg-blue-500 text-[10px] px-1.5 py-0.5 rounded-full">0</span>
+                    <span id="cart-count"
+                        class="bg-blue-500 text-[10px] px-1.5 py-0.5 rounded-full uppercase font-bold">0</span>
                 </button>
             </div>
         </nav>
     </header>
 
-    <main class="min-h-[80vh]">
-        <section id="home" class="page-section active">
-            <div class="container mx-auto px-6 py-20 lg:py-32 grid lg:grid-cols-2 gap-16 items-center">
-                <div class="text-left space-y-8">
-                    <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 leading-[1.1]">Data wordt <span
-                            class="text-blue-600 underline decoration-blue-200">Impact.</span></h1>
-                    <p class="text-xl text-slate-600 leading-relaxed max-w-lg">Wij transformeren complexe data naar
-                        begrijpelijke strategieën voor de ambitieuze ondernemer.</p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <button type="button" onclick="showPage('aanbod')"
-                            class="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold shadow-xl shadow-blue-200 hover:bg-blue-700 transition">Onze
-                            Oplossingen</button>
-                        <button type="button" onclick="showPage('over-ons')"
-                            class="border-2 border-slate-200 px-8 py-4 rounded-xl font-bold hover:bg-white transition">Leer
-                            ons kennen</button>
+    <main>
+        <section id="start" class="page-section active">
+            <div class="hero-overlay min-h-[90vh] flex items-center justify-center text-center text-white px-6">
+                <div class="max-w-4xl space-y-8">
+                    <h1 class="text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none">Welkom bij
+                        <br><span class="text-blue-400">Tailwind HQ.</span></h1>
+                    <div class="bg-black/40 backdrop-blur-xl p-8 rounded-3xl border border-white/20">
+                        <p class="text-lg md:text-2xl leading-relaxed text-slate-100 italic">
+                            Vanuit ons innovatieve hoofdkantoor bouwen wij aan de digitale architectuur van de toekomst.
+                        </p>
                     </div>
-                </div>
-                <div class="hidden lg:block">
-                    <div
-                        class="bg-gradient-to-br from-blue-50 to-indigo-100 h-[450px] rounded-[2rem] border-2 border-white shadow-2xl flex items-center justify-center overflow-hidden">
-                        <div class="text-blue-200 animate-pulse text-8xl font-black italic uppercase select-none">Impact
-                        </div>
-                    </div>
+                    <button type="button" onclick="showPage('home')"
+                        class="bg-blue-600 text-white px-10 py-5 rounded-full font-black uppercase tracking-widest transition shadow-2xl hover:bg-white hover:text-blue-600">Start
+                        dashboard</button>
                 </div>
             </div>
         </section>
 
-        <section id="over-ons" class="page-section">
-            <div class="container mx-auto px-6 py-20">
-                <div class="max-w-4xl mx-auto space-y-12">
-                    <div class="text-left">
-                        <h2 class="text-blue-600 font-bold uppercase tracking-widest text-sm mb-4">Wie zijn wij?</h2>
-                        <h3 class="text-4xl md:text-5xl font-extrabold mb-8 italic">Pioniers in <span
-                                class="text-slate-400">digitale transformatie</span>.</h3>
-                        <p class="text-lg text-slate-600 leading-relaxed">Tailwind is een team van strategen en
-                            tech-enthousiastelingen die geloven dat technologie de menselijke intuïtie moet versterken,
-                            niet vervangen.</p>
-                    </div>
-
-                    <div class="grid md:grid-cols-2 gap-8 text-left">
-                        <div class="p-8 bg-white rounded-2xl border border-slate-100 shadow-sm">
-                            <h4 class="text-xl font-bold mb-4">Onze Missie</h4>
-                            <p class="text-slate-600">Complexe AI en cloud-technologie toegankelijk maken voor elke
-                                onderneming, ongeacht de grootte.</p>
-                        </div>
-                        <div class="p-8 bg-white rounded-2xl border border-slate-100 shadow-sm">
-                            <h4 class="text-xl font-bold mb-4">Onze Waarden</h4>
-                            <ul class="space-y-2 text-slate-600 font-medium italic">
-                                <li>• Radicale Transparantie</li>
-                                <li>• Kwaliteit boven Kwantiteit</li>
-                                <li>• Mensgerichte Innovatie</li>
-                            </ul>
-                        </div>
-                    </div>
+        <section id="home" class="page-section">
+            <div class="container mx-auto px-6 py-20 lg:py-32 grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8 text-left">
+                    <h2 class="text-6xl font-black text-slate-900 leading-tight">Data die <br><span
+                            class="text-blue-600 italic">leeft.</span></h2>
+                    <p class="text-xl text-slate-500 leading-relaxed italic">Bekijk onze strategische impact via ons
+                        interactieve portaal.</p>
+                    <button type="button" onclick="showPage('aanbod')"
+                        class="bg-slate-900 text-white px-8 py-4 rounded-xl font-bold shadow-xl hover:bg-blue-600 transition uppercase">Bekijk
+                        tools</button>
+                </div>
+                <div class="hidden lg:block">
+                    <img src="https://images.unsplash.com/photo-1551288049-bbda48658a7d?q=80&w=800&auto=format&fit=crop"
+                        alt="Data Dashboard Visualisatie"
+                        class="rounded-[3rem] shadow-2xl border-4 border-white transition hover:scale-[1.01]">
                 </div>
             </div>
         </section>
 
         <section id="aanbod" class="page-section">
-            <div class="container mx-auto px-6 py-20 text-center">
-                <h2 class="text-4xl font-black mb-4 uppercase tracking-tighter">Expertise op maat</h2>
-                <p class="text-slate-500 mb-16 max-w-xl mx-auto italic text-lg">Selecteer de diensten die uw groei
-                    zullen versnellen.</p>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="container mx-auto px-6 py-20">
+                <h2 class="text-4xl font-black mb-12 uppercase tracking-tighter text-left">Oplossingen op maat</h2>
+                <div class="grid md:grid-cols-3 gap-8">
                     <div
-                        class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm text-left flex flex-col justify-between hover:border-blue-500 transition-colors group">
-                        <div>
-                            <div
-                                class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600 mb-6 font-bold uppercase text-xs">
-                                Audit</div>
-                            <h4 class="text-2xl font-bold mb-2">AI Business Audit</h4>
-                            <p class="text-slate-500 mb-6 text-sm italic">Strategische analyse van uw processen.</p>
-                            <p class="text-3xl font-black text-blue-600 mb-6">€ 499,00</p>
+                        class="group bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm transition-all hover:shadow-2xl hover:-translate-y-2 text-left">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400&auto=format&fit=crop"
+                            alt="AI Audit" class="w-full h-48 object-cover">
+                        <div class="p-8">
+                            <h4 class="text-xl font-bold mb-4 italic underline decoration-blue-400">AI Business Audit
+                            </h4>
+                            <p class="text-3xl font-black text-blue-600 mb-6 uppercase">€ 499,00</p>
+                            <button type="button" onclick="addToCart('AI Business Audit', 499)"
+                                class="w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition uppercase">Voeg
+                                toe</button>
                         </div>
-                        <button type="button" onclick="addToCart('AI Business Audit', 499)"
-                            class="w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-slate-900 transition shadow-md">VOEG
-                            TOE</button>
                     </div>
                     <div
-                        class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm text-left flex flex-col justify-between hover:border-blue-500 transition-colors group">
-                        <div>
-                            <div
-                                class="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center text-amber-600 mb-6 font-bold uppercase text-xs">
-                                Edu</div>
-                            <h4 class="text-2xl font-bold mb-2">Workshop Efficiëntie</h4>
-                            <p class="text-slate-500 mb-6 text-sm italic">Teamtraining voor moderne workflows.</p>
-                            <p class="text-3xl font-black text-blue-600 mb-6">€ 150,00</p>
+                        class="group bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm transition-all hover:shadow-2xl hover:-translate-y-2 text-left">
+                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=400&auto=format&fit=crop"
+                            alt="Workshop" class="w-full h-48 object-cover">
+                        <div class="p-8">
+                            <h4 class="text-xl font-bold mb-4 italic underline decoration-blue-400">Workshop Efficiëntie
+                            </h4>
+                            <p class="text-3xl font-black text-blue-600 mb-6 uppercase">€ 150,00</p>
+                            <button type="button" onclick="addToCart('Workshop Efficiëntie', 150)"
+                                class="w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition uppercase">Voeg
+                                toe</button>
                         </div>
-                        <button type="button" onclick="addToCart('Workshop Efficiëntie', 150)"
-                            class="w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-slate-900 transition shadow-md">VOEG
-                            TOE</button>
                     </div>
                     <div
-                        class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm text-left flex flex-col justify-between hover:border-blue-500 transition-colors group">
-                        <div>
-                            <div
-                                class="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center text-green-600 mb-6 font-bold uppercase text-xs">
-                                Cloud</div>
-                            <h4 class="text-2xl font-bold mb-2">Cloud Integratie</h4>
-                            <p class="text-slate-500 mb-6 text-sm italic">Veilige migratie naar de cloud.</p>
-                            <p class="text-3xl font-black text-blue-600 mb-6">€ 899,00</p>
+                        class="group bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm transition-all hover:shadow-2xl hover:-translate-y-2 text-left">
+                        <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=400&auto=format&fit=crop"
+                            alt="Cloud Integration" class="w-full h-48 object-cover">
+                        <div class="p-8">
+                            <h4 class="text-xl font-bold mb-4 italic underline decoration-blue-400">Cloud Integratie
+                            </h4>
+                            <p class="text-3xl font-black text-blue-600 mb-6 uppercase">€ 899,00</p>
+                            <button type="button" onclick="addToCart('Cloud Integratie', 899)"
+                                class="w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition uppercase">Voeg
+                                toe</button>
                         </div>
-                        <button type="button" onclick="addToCart('Cloud Integratie', 899)"
-                            class="w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-slate-900 transition shadow-md">VOEG
-                            TOE</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-hub" class="page-section">
+            <div class="container mx-auto px-6 py-20 max-w-4xl text-left">
+                <div class="bg-white rounded-[3.5rem] shadow-2xl overflow-hidden border border-slate-100">
+                    <div class="bg-slate-900 p-12 text-white text-center">
+                        <h2 class="text-4xl font-black uppercase tracking-tighter italic">Hoe kunnen we helpen?</h2>
+                    </div>
+
+                    <div class="p-12 space-y-10">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <button type="button" id="btn-choice-client" onclick="toggleForm('client')"
+                                class="p-6 rounded-2xl border-2 border-blue-600 bg-blue-50 transition-all text-left group">
+                                <span
+                                    class="block font-bold text-xl group-hover:text-blue-600 transition mb-1 uppercase tracking-tighter">Contact
+                                    opnemen</span>
+                                <span class="block text-sm text-slate-400 italic">Voor zakelijke vragen en
+                                    projecten.</span>
+                            </button>
+                            <button type="button" id="btn-choice-job" onclick="toggleForm('job')"
+                                class="p-6 rounded-2xl border-2 border-slate-100 hover:border-blue-600 transition-all text-left group">
+                                <span
+                                    class="block font-bold text-xl group-hover:text-blue-600 transition mb-1 uppercase tracking-tighter">Solliciteren</span>
+                                <span class="block text-sm text-slate-400 italic">Word onderdeel van ons team.</span>
+                            </button>
+                        </div>
+
+                        <form id="dynamic-form" class="space-y-6"
+                            onsubmit="event.preventDefault(); alert('Aanvraag succesvol verwerkt!');">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <input type="text" placeholder="Voornaam" aria-label="Voornaam"
+                                    class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-600 transition"
+                                    required>
+                                <input type="text" placeholder="Achternaam" aria-label="Achternaam"
+                                    class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-600 transition"
+                                    required>
+                            </div>
+
+                            <div id="fields-client" class="space-y-6">
+                                <input type="text" placeholder="Bedrijfsnaam" aria-label="Bedrijfsnaam"
+                                    class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-600 transition">
+                            </div>
+
+                            <div id="fields-job" class="space-y-6 hidden">
+                                <input type="url" placeholder="LinkedIn URL" aria-label="LinkedIn URL"
+                                    class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-600 transition">
+                            </div>
+
+                            <textarea placeholder="Uw bericht..." aria-label="Bericht" rows="4"
+                                class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-600 transition"
+                                required></textarea>
+
+                            <button type="submit"
+                                class="w-full bg-blue-600 text-white font-black py-5 rounded-2xl uppercase tracking-widest hover:bg-slate-900 transition shadow-xl">Verstuur
+                                aanvraag</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="winkelmand" class="page-section">
-            <div class="container mx-auto px-6 py-20 max-w-4xl">
-                <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-200">
-                    <div class="bg-slate-900 p-8 text-white flex justify-between items-center">
-                        <h2 class="text-2xl font-black italic underline decoration-blue-500 tracking-tight">Uw Selectie
+            <div class="container mx-auto px-6 py-20 max-w-4xl text-left">
+                <div class="bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border border-slate-200">
+                    <div class="bg-slate-900 p-8 text-white flex justify-between items-center text-left">
+                        <h2 class="text-2xl font-black italic underline decoration-blue-500 text-left uppercase">Uw Mand
                         </h2>
                         <button type="button" onclick="clearCart()"
-                            class="text-xs font-bold uppercase tracking-widest text-slate-400 hover:text-red-400 transition">Leegmaken</button>
+                            class="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-red-400 transition text-left">Legen</button>
                     </div>
-                    <div class="p-8">
-                        <div id="cart-empty-msg" class="text-center py-16 text-slate-400 italic">Uw winkelmand is
-                            momenteel leeg. <br><button type="button" onclick="showPage('aanbod')"
-                                class="mt-4 text-blue-600 font-bold not-italic underline">Bekijk oplossingen</button>
-                        </div>
-                        <div id="cart-table-wrapper" class="hidden overflow-x-auto">
+                    <div class="p-10 text-left italic">
+                        <div id="cart-empty-msg" class="text-center py-10 text-slate-400 italic uppercase font-bold">De
+                            mand is momenteel leeg.</div>
+                        <div id="cart-table-wrapper" class="hidden text-left">
                             <table class="w-full text-left">
                                 <thead
-                                    class="border-b border-slate-100 text-slate-400 text-xs uppercase tracking-widest">
+                                    class="border-b border-slate-100 text-[10px] uppercase font-bold text-slate-400 tracking-widest text-left">
                                     <tr>
-                                        <th class="pb-4">Service</th>
+                                        <th class="pb-4 text-left font-black">Product</th>
                                         <th class="pb-4 text-right">Prijs</th>
                                         <th class="pb-4 text-right">Actie</th>
                                     </tr>
                                 </thead>
-                                <tbody id="cart-items" class="divide-y divide-slate-100"></tbody>
+                                <tbody id="cart-items" class="divide-y divide-slate-100 text-left"></tbody>
                             </table>
+                            <div
+                                class="mt-8 flex justify-between items-center p-8 bg-blue-50 rounded-2xl border border-blue-100 text-left">
+                                <span
+                                    class="font-bold uppercase tracking-widest text-xs text-left italic">Totaalbedrag</span>
+                                <span id="cart-total-price" class="text-3xl font-black text-blue-600 text-left italic">€
+                                    0,00</span>
+                            </div>
                         </div>
-                        <div id="cart-total-container"
-                            class="mt-8 flex justify-between items-center p-8 bg-blue-50 rounded-2xl hidden border border-blue-100">
-                            <span class="text-lg font-bold">Totaal (incl. BTW)</span>
-                            <span id="cart-total-price" class="text-4xl font-black text-blue-700">€ 0,00</span>
-                        </div>
-                        <button type="submit" id="checkout-btn"
-                            class="w-full mt-8 bg-slate-900 text-white py-5 rounded-2xl font-bold text-xl hover:bg-blue-600 transition shadow-xl hidden">Bevestig
-                            Bestelling</button>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="vacatures" class="page-section">
-            <div class="container mx-auto px-6 py-20 grid lg:grid-cols-2 gap-16 items-start">
-                <div class="text-left space-y-6">
-                    <h2 class="text-5xl font-black uppercase tracking-tighter italic">Bouw mee aan <br><span
-                            class="text-blue-600">morgen.</span></h2>
-                    <p class="text-lg text-slate-600 italic leading-relaxed">Wij zijn altijd op zoek naar creatieve
-                        geesten en technische wizards die buiten de lijntjes durven kleuren.</p>
-                    <div class="bg-white p-8 rounded-2xl border-l-8 border-blue-600 shadow-sm space-y-4">
-                        <h4 class="text-2xl font-bold italic underline">Junior Project Manager</h4>
-                        <p class="text-slate-500 font-medium">• 38u/week • Hybride • Antwerpen</p>
-                        <p class="text-slate-600 leading-relaxed">Als Junior PM ben je de schakel tussen onze klanten en
-                            het development team. Je houdt het overzicht en zorgt voor tijdige levering.</p>
-                    </div>
-                </div>
-                <div class="bg-slate-900 p-10 rounded-[2.5rem] text-white shadow-2xl space-y-8">
-                    <h3 class="text-3xl font-bold italic underline decoration-blue-500 text-left">Solliciteer direct
-                    </h3>
-                    <form action="#" class="space-y-4">
-                        <input type="text" placeholder="Volledige Naam" aria-label="Naam"
-                            class="w-full p-4 bg-white/10 border border-white/20 rounded-xl outline-none focus:bg-white/20 transition placeholder:text-slate-500"
-                            required>
-                        <input type="email" placeholder="E-mailadres" aria-label="Email"
-                            class="w-full p-4 bg-white/10 border border-white/20 rounded-xl outline-none focus:bg-white/20 transition placeholder:text-slate-500"
-                            required>
-                        <textarea placeholder="Waarom Tailwind?" aria-label="Motivatie" rows="4"
-                            class="w-full p-4 bg-white/10 border border-white/20 rounded-xl outline-none focus:bg-white/20 transition placeholder:text-slate-500"></textarea>
-                        <button type="submit"
-                            class="w-full bg-blue-600 text-white font-black py-5 rounded-xl hover:bg-white hover:text-blue-600 transition uppercase tracking-widest shadow-lg">Verstuur
-                            CV</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="page-section">
-            <div class="container mx-auto px-6 py-20 max-w-2xl text-left">
-                <div class="bg-white p-12 rounded-[3rem] shadow-sm border border-slate-200 space-y-8">
-                    <h2 class="text-4xl font-black uppercase tracking-tighter">Laten we praten</h2>
-                    <p class="text-slate-500 italic text-lg leading-relaxed">Hebt u een specifieke vraag of wilt u een
-                        strategisch adviesgesprek? Ons team reageert binnen 24 uur.</p>
-                    <form action="#" method="POST" class="space-y-6">
-                        <div class="space-y-1">
-                            <label
-                                class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Bedrijfsgegevens</label>
-                            <input type="text" placeholder="Bedrijfsnaam" aria-label="Bedrijfsnaam"
-                                class="w-full border-b border-slate-200 py-4 outline-none focus:border-blue-600 transition bg-transparent">
-                        </div>
-                        <div class="space-y-1">
-                            <label
-                                class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">E-mail</label>
-                            <input type="email" placeholder="Zakelijk e-mailadres" aria-label="Email"
-                                class="w-full border-b border-slate-200 py-4 outline-none focus:border-blue-600 transition bg-transparent"
-                                required>
-                        </div>
-                        <div class="space-y-1">
-                            <label
-                                class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">Vraag</label>
-                            <textarea placeholder="Uw bericht..." aria-label="Bericht" rows="3"
-                                class="w-full border-b border-slate-200 py-4 outline-none focus:border-blue-600 transition bg-transparent"></textarea>
-                        </div>
-                        <button type="submit"
-                            class="text-blue-600 font-black text-xl flex items-center gap-3 hover:translate-x-3 transition uppercase tracking-tighter italic underline decoration-blue-200">
-                            Verstuur aanvraag <span>&rarr;</span>
-                        </button>
-                    </form>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="bg-slate-50 border-t border-slate-200 py-16 text-center">
-        <div class="container mx-auto px-6">
-            <p class="text-slate-400 font-black uppercase tracking-[0.3em] text-[10px] mb-4">&copy; 2026 Project
-                Tailwind</p>
-            <div class="flex justify-center gap-8 text-[11px] font-bold text-slate-600">
-                <button type="button" onclick="showPage('contact')" class="hover:text-blue-600">Support</button>
-                <button type="button" onclick="showPage('over-ons')" class="hover:text-blue-600">Privacy</button>
-            </div>
-        </div>
+    <footer
+        class="bg-white border-t border-slate-100 py-16 text-center text-[10px] font-black uppercase tracking-[0.5em] text-slate-400 italic">
+        &copy; 2026 Project Tailwind. Built for scale.
     </footer>
 
     <script>
@@ -292,68 +252,52 @@
         function showPage(pageId) {
             document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
             const target = document.getElementById(pageId);
-            if (target) {
-                target.classList.add('active');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+            if (target) { target.classList.add('active'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+        }
+
+        function toggleForm(type) {
+            const clientFields = document.getElementById('fields-client');
+            const jobFields = document.getElementById('fields-job');
+            const btnClient = document.getElementById('btn-choice-client');
+            const btnJob = document.getElementById('btn-choice-job');
+
+            if (type === 'client') {
+                clientFields.classList.remove('hidden'); jobFields.classList.add('hidden');
+                btnClient.classList.replace('border-slate-100', 'border-blue-600'); btnClient.classList.add('bg-blue-50');
+                btnJob.classList.replace('border-blue-600', 'border-slate-100'); btnJob.classList.remove('bg-blue-50');
+            } else {
+                clientFields.classList.add('hidden'); jobFields.classList.remove('hidden');
+                btnJob.classList.replace('border-slate-100', 'border-blue-600'); btnJob.classList.add('bg-blue-50');
+                btnClient.classList.replace('border-blue-600', 'border-slate-100'); btnClient.classList.remove('bg-blue-50');
             }
         }
 
         function addToCart(name, price) {
             cart.push({ id: Date.now(), name, price });
             updateCartUI();
-            alert(`${name} is toegevoegd aan uw mand!`);
+            alert(`${name} toegevoegd!`);
         }
 
-        function removeFromCart(id) {
-            cart = cart.filter(item => item.id !== id);
-            updateCartUI();
-        }
-
-        function clearCart() {
-            if (confirm('Wilt u de winkelmand volledig leegmaken?')) {
-                cart = [];
-                updateCartUI();
-            }
-        }
+        function removeFromCart(id) { cart = cart.filter(item => item.id !== id); updateCartUI(); }
+        function clearCart() { if (confirm('Legen?')) { cart = []; updateCartUI(); } }
 
         function updateCartUI() {
             const itemsContainer = document.getElementById('cart-items');
             const emptyMsg = document.getElementById('cart-empty-msg');
             const wrapper = document.getElementById('cart-table-wrapper');
-            const totalContainer = document.getElementById('cart-total-container');
-            const checkoutBtn = document.getElementById('checkout-btn');
             const countLabel = document.getElementById('cart-count');
-
             countLabel.innerText = cart.length;
 
             if (cart.length === 0) {
-                emptyMsg.classList.remove('hidden');
-                wrapper.classList.add('hidden');
-                totalContainer.classList.add('hidden');
-                checkoutBtn.classList.add('hidden');
+                emptyMsg.classList.remove('hidden'); wrapper.classList.add('hidden');
             } else {
-                emptyMsg.classList.add('hidden');
-                wrapper.classList.remove('hidden');
-                totalContainer.classList.remove('hidden');
-                checkoutBtn.classList.remove('hidden');
-
+                emptyMsg.classList.add('hidden'); wrapper.classList.remove('hidden');
                 itemsContainer.innerHTML = '';
                 let total = 0;
-
                 cart.forEach(item => {
                     total += item.price;
-                    const row = `
-                        <tr class="hover:bg-slate-50 transition-colors">
-                            <td class="py-6 italic font-bold text-slate-700">${item.name}</td>
-                            <td class="py-6 text-right font-black text-blue-600">€ ${item.price.toFixed(2)}</td>
-                            <td class="py-6 text-right">
-                                <button type="button" onclick="removeFromCart(${item.id})" class="text-red-400 hover:text-red-600 font-bold text-[10px] uppercase tracking-widest border border-red-100 px-3 py-1 rounded-md transition-all">Wis</button>
-                            </td>
-                        </tr>
-                    `;
-                    itemsContainer.innerHTML += row;
+                    itemsContainer.innerHTML += `<tr><td class="py-6 font-bold italic text-slate-700">${item.name}</td><td class="py-6 text-right font-black text-blue-600 text-xl italic text-left">€ ${item.price.toFixed(2)}</td><td class="py-6 text-right"><button type="button" onclick="removeFromCart(${item.id})" class="text-[10px] font-black uppercase tracking-widest border border-red-100 px-3 py-1 rounded-xl text-red-400 hover:bg-red-400 hover:text-white transition shadow-sm">Wis</button></td></tr>`;
                 });
-
                 document.getElementById('cart-total-price').innerText = `€ ${total.toFixed(2)}`;
             }
         }

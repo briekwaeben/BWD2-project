@@ -16,6 +16,13 @@
         #info-modal.active {
             display: flex;
         }
+
+        .page-anim {
+            animation: fadeIn 0.6s ease-out;
+        }
+        html {
+            scrollbar-gutter: stable;
+        }
     </style>
 </head>
 
@@ -47,7 +54,7 @@
                 class="bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm transition hover:shadow-2xl hover:-translate-y-2">
                 <button type="button" onclick="openInfo('audit')" class="w-full text-left focus:outline-none group">
                     <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400&auto=format&fit=crop"
-                        alt="Audit" class="w-full h-48 object-cover">
+                        alt="AI Audit" class="w-full h-48 object-cover">
                     <span
                         class="block p-8 pb-0 text-xl font-bold italic underline decoration-blue-400 group-hover:text-blue-600 transition">AI
                         Business Audit</span>
@@ -105,29 +112,9 @@
         </div>
     </div>
 
+    <script src="../JS/cart.js"></script>
+
     <script>
-        // 1. WINKELMAND LOGICA
-        // Haal mand op of maak een nieuwe lege lijst
-        let cart = JSON.parse(localStorage.getItem("tailwind_cart")) || [];
-
-        // Update de teller
-        function updateCartCount() {
-            const countLabel = document.getElementById("cart-count");
-            if (countLabel) countLabel.innerText = cart.length;
-        }
-
-        // Voeg item toe
-        function addToCart(name, price) {
-            cart.push({ id: Date.now(), name: name, price: price });
-            localStorage.setItem("tailwind_cart", JSON.stringify(cart));
-            updateCartCount();
-            alert(name + " is toegevoegd!");
-        }
-
-        // Voer teller update uit bij laden
-        updateCartCount();
-
-        // 2. POP-UP LOGICA
         const details = {
             audit: { title: "AI Business Audit", desc: "Analyse van uw bedrijfsprocessen om efficiëntie te verhogen." },
             workshop: { title: "Workshop Efficiëntie", desc: "Leer uw team werken met de nieuwste digitale tools." },
